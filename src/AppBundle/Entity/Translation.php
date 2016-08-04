@@ -6,11 +6,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use AppBundle\Model\Translation as TranslationModel;
 use AppBundle\Manager\TranslationInterface;
 
-/**
- * @UniqueEntity(fields={"transUnit", "locale"})
- *
- * @author Cédric Girard <c.girard@lexik.fr>
- */
 class Translation extends TranslationModel implements TranslationInterface
 {
     /**

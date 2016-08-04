@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace AppBundle\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Query;
@@ -8,11 +8,7 @@ use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\EntityRepository;
 use AppBundle\Model\File as ModelFile;
 
-/**
- * Repository for TransUnit entity.
- *
- * @author Cédric Girard <c.girard@lexik.fr>
- */
+
 class TransUnitRepository extends EntityRepository
 {
     /**
@@ -76,12 +72,6 @@ class TransUnitRepository extends EntityRepository
      */
     public function getTransUnitList(array $locales = null, $rows = 20, $page = 1, array $filters = null)
     {
-
-        // CE SE INTAMPLA AICI TREBUIE SA FIE PE SERVER SI SA RETURNEZE O LISTA DE TRANSUNITS
-        $output = fopen("logs.log", "a+");
-        $log_message = 'Functia getTransUnitList() - extrage din baza de date traducerile';
-        fwrite($output, $log_message . PHP_EOL);
-
         $this->loadCustomHydrator();
 
         $sortColumn = isset($filters['sidx']) ? $filters['sidx'] : 'id';
@@ -107,25 +97,11 @@ class TransUnitRepository extends EntityRepository
             $transUnits = $qb->select('tu, te')
                 ->leftJoin('tu.translations', 'te')
                 ->andWhere($qb->expr()->in('tu.id', $ids))
-                ->andWhere($qb->expr()->in('te.locale', $locales))
+                //->andWhere($qb->expr()->in('te.locale', $locales))
                 ->orderBy(sprintf('tu.%s', $sortColumn), $order)
                 ->getQuery()
                 ->getArrayResult();
         }
-
-//        $outputTwo = fopen("traduceri.log", "a+");
-//
-//        foreach ($transUnits as $transUnit) {
-//            //$translations = $transUnit->getTranslations();
-//
-//            foreach ($transUnit as $t) {
-//                print_r($t,true);
-//                break;
-//                //fwrite($outputTwo, $t->getDomain() . PHP_EOL);
-//           }
-//
-//            break;
-//        }
         
         return $transUnits;
     }
@@ -155,8 +131,6 @@ class TransUnitRepository extends EntityRepository
      */
     public function countByDomains()
     {
-        // AICI INTOARCE NUMARUL DE TRADUCERII PE DOMENIU
-        //|\\
         return $this->createQueryBuilder('tu')
             ->select('COUNT(DISTINCT tu.id) AS number, tu.domain')
             ->groupBy('tu.domain')
@@ -254,6 +228,6 @@ class TransUnitRepository extends EntityRepository
     protected function loadCustomHydrator()
     {
         $config = $this->getEntityManager()->getConfiguration();
-        $config->addCustomHydrationMode('SingleColumnArrayHydrator', 'Lexik\Bundle\TranslationBundle\Util\Doctrine\SingleColumnArrayHydrator');
+        $config->addCustomHydrationMode('SingleColumnArrayHydrator', 'AppBundle\Util\Doctrine\SingleColumnArrayHydrator');
     }
 }

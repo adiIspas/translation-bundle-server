@@ -5,14 +5,26 @@ namespace AppBundle\Entity;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use AppBundle\Model\TransUnit as TransUnitModel;
 use AppBundle\Manager\TransUnitInterface;
+use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @UniqueEntity(fields={"key", "domain"})
- *
- * @author Cédric Girard <c.girard@lexik.fr>
- */
+
 class TransUnit extends TransUnitModel implements TransUnitInterface
 {
+    /**
+     * @var integer
+     * @ORM\Id
+     * @ORM\Column(name="id", type="bigint", nullable=false, options={"unsigned": true})
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var string
+     * @ORM\domain
+     * @ORM\Column(name="domain", type="string", nullable=false, options={"unsigned": true})
+     */
+    protected $domain;
+
     /**
      * Add translations
      *
