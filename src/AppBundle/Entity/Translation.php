@@ -6,15 +6,68 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use AppBundle\Model\Translation as TranslationModel;
 use AppBundle\Manager\TranslationInterface;
 
+/**
+ * LexikTransUnitTranslations
+ *
+ * @ORM\Table(name="lexik_trans_unit_translations", uniqueConstraints={@ORM\UniqueConstraint(name="trans_unit_locale_idx", columns={"trans_unit_id", "locale"})}, indexes={@ORM\Index(name="IDX_B0AA394493CB796C", columns={"file_id"}), @ORM\Index(name="IDX_B0AA3944C3C583C9", columns={"trans_unit_id"})})
+ * @ORM\Entity
+ */
 class Translation extends TranslationModel implements TranslationInterface
 {
     /**
-     * @var int
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     protected $id;
 
     /**
-     * @var AppBundle\Entity\TransUnit
+     * @var string
+     *
+     * @ORM\Column(name="locale", type="string", length=10, nullable=false)
+     */
+    protected $locale;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=false)
+     */
+    protected $content;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
+     */
+    protected $createdAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+     */
+    protected $updatedAt;
+
+    /**
+     * @var \LexikTranslationFile
+     *
+     * @ORM\ManyToOne(targetEntity="LexikTranslationFile")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="file_id", referencedColumnName="id")
+     * })
+     */
+    protected $file;
+
+    /**
+     * @var \LexikTransUnit
+     *
+     * @ORM\ManyToOne(targetEntity="LexikTransUnit")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="trans_unit_id", referencedColumnName="id")
+     * })
      */
     protected $transUnit;
 

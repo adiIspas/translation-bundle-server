@@ -43,7 +43,7 @@ class TransUnitService
         $em = $this->doctrine->getManager();
         $repository = $em->getRepository('AppBundle:TransUnit');
 
-        $transUnits = $repository->countByDomains();
+        $transUnits = $repository->getTransUnitList();
         //$transUnits = $repository->findAll();
         
         return $transUnits;
