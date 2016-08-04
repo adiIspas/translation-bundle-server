@@ -110,9 +110,9 @@ abstract class TransUnit
     /**
      * Add translations
      *
-     * @param \Lexik\Bundle\TranslationBundle\Model\Translation $translations
+     * @param \AppBundle\Model\Translation $translations
      */
-    public function addTranslation(\Lexik\Bundle\TranslationBundle\Model\Translation $translation)
+    public function addTranslation(\AppBundle\Model\Translation $translation)
     {
         $this->translations[] = $translation;
     }
@@ -120,9 +120,9 @@ abstract class TransUnit
     /**
      * Remove translations
      *
-     * @param \Lexik\Bundle\TranslationBundle\Model\Translation $translations
+     * @param \AppBundle\Model\Translation $translations
      */
-    public function removeTranslation(\Lexik\Bundle\TranslationBundle\Model\Translation $translation)
+    public function removeTranslation(\AppBundle\Model\Translation $translation)
     {
         $this->translations->removeElement($translation);
     }
@@ -152,7 +152,7 @@ abstract class TransUnit
      * Return the content of translation for the given locale.
      *
      * @param string $locale
-     * @return \Lexik\Bundle\TranslationBundle\Model\Translation
+     * @return \AppBundle\Model\Translation
      */
     public function getTranslation($locale)
     {

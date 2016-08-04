@@ -26,7 +26,7 @@ abstract class Translation
     protected $content;
 
     /**
-     * @var Lexik\Bundle\TranslationBundle\Model\File
+     * @var AppBundle\Model\File
      */
     protected $file;
 
@@ -84,9 +84,9 @@ abstract class Translation
     /**
      * Set file
      *
-     * @param \Lexik\Bundle\TranslationBundle\Model\File $file
+     * @param \AppBundle\Model\File $file
      */
-    public function setFile(\Lexik\Bundle\TranslationBundle\Model\File $file)
+    public function setFile(\AppBundle\Model\File $file)
     {
         $this->file = $file;
     }
@@ -94,7 +94,7 @@ abstract class Translation
     /**
      * Get file
      *
-     * @return \Lexik\Bundle\TranslationBundle\Model\File
+     * @return \AppBundle\Model\File
      */
     public function getFile()
     {

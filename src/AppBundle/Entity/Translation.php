@@ -19,7 +19,7 @@ class Translation extends TranslationModel implements TranslationInterface
     protected $id;
 
     /**
-     * @var Lexik\Bundle\TranslationBundle\Entity\TransUnit
+     * @var AppBundle\Entity\TransUnit
      */
     protected $transUnit;
 
@@ -36,9 +36,9 @@ class Translation extends TranslationModel implements TranslationInterface
     /**
      * Set transUnit
      *
-     * @param Lexik\Bundle\TranslationBundle\Entity\TransUnit $transUnit
+     * @param AppBundle\Entity\TransUnit $transUnit
      */
-    public function setTransUnit(\Lexik\Bundle\TranslationBundle\Model\TransUnit $transUnit)
+    public function setTransUnit(\AppBundle\Model\TransUnit $transUnit)
     {
         $this->transUnit = $transUnit;
     }
@@ -46,7 +46,7 @@ class Translation extends TranslationModel implements TranslationInterface
     /**
      * Get transUnit
      *
-     * @return Lexik\Bundle\TranslationBundle\Entity\TransUnit
+     * @return AppBundle\Entity\TransUnit
      */
     public function getTransUnit()
     {
