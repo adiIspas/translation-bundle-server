@@ -107,6 +107,10 @@ class TransUnitRepository extends EntityRepository
         return $transUnits;
     }
 
+    /**
+     * Get all translations from database - WORK
+     * @return array
+     */
     public function getAllTranslations()
     {
         $qb = $this->createQueryBuilder('tu');
@@ -123,7 +127,7 @@ class TransUnitRepository extends EntityRepository
     }
 
     /**
-     * Count the number of trans unit.
+     * Count the number of trans unit. - WORK with non param
      *
      * @param array $locales
      * @param array $filters
@@ -140,6 +144,26 @@ class TransUnitRepository extends EntityRepository
         $this->addTranslationFilter($builder, $locales, $filters);
 
         return (int) $builder->getQuery()->getResult(Query::HYDRATE_SINGLE_SCALAR);
+    }
+
+    /**
+     * @return array
+     */
+    public function countByLocaleAndDomain()
+    {
+        // select tu.domain, ts.locale, count(ts.locale) from lexik_trans_unit tu join lexik_trans_unit_translations ts on (tu.id = ts.trans_unit_id) group by ts.locale;
+
+        $qb = $this->createQueryBuilder('tu');
+
+        $counts = $qb->select('tu.domain', 'ts.locale', 'count(ts.locale) as total')
+            ->join('AppBundle:Translation','ts')
+            ->where('tu.id = ts.transUnit')
+            ->groupBy('ts.locale')
+            ->orderBy('tu.domain')
+            ->getQuery()
+            ->getArrayResult();
+
+        return $counts;
     }
 
     /**
