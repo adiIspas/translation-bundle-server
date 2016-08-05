@@ -179,12 +179,14 @@ class TransUnitRepository extends EntityRepository
             ->getArrayResult();
     }
 
+    /**
+     * Return all translations for each locales by one domain - WORK (IN USE)
+     *
+     * @param $domain
+     * @return array
+     */
     public function getCountTranslationByLocales($domain)
     {
-
-        //select tu.domain, ts.locale, count(ts.locale) from lexik_trans_unit tu
-        //join lexik_trans_unit_translations ts on (tu.id = ts.trans_unit_id) where tu.domain = 'messages' group by ts.locale, tu.domain order by tu.domain;
-
         $qb = $this->createQueryBuilder('tu');
 
         $translationsByLocales = $qb->select('tu.domain', 'ts.locale', 'count(ts.locale) as total')

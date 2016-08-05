@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -31,5 +31,20 @@ class FileRepository extends EntityRepository
         }
 
         return $builder->getQuery()->getResult();
+    }
+
+    /**
+     * Get all locales - - WORK (IN USE)
+     * @return array
+     */
+    public function getLocales()
+    {
+        $qb = $this->createQueryBuilder('f');
+
+        $locales = $qb->select('distinct f.locale')
+            ->getQuery()
+            ->getArrayResult();
+
+        return $locales;
     }
 }

@@ -34,6 +34,8 @@ class TransUnitController extends RestController
     }
 
     /**
+     * Return total number of translations for each domain
+     *
      * @FOS\View()
      * @FOS\Get("/count/domains")
      *
@@ -47,6 +49,8 @@ class TransUnitController extends RestController
     }
 
     /**
+     * Return total number of translations for each locale in every domain
+     *
      * @FOS\View()
      * @FOS\Get("/count/{domain}")
      *
@@ -56,6 +60,21 @@ class TransUnitController extends RestController
     {
         $transUnitService = $this->container->get('app_bundle.service.trans_unit');
         return $transUnitService->getCountTranslationByLocales($domain);
+    }
+
+    /**
+     * Get all locales
+     *
+     * @FOS\View()
+     * @FOS\Get("/locales")
+     *
+     * @param ParamFetcherInterface $paramFetcher
+     * @return mixed
+     */
+    public function getLocalesAction(ParamFetcherInterface $paramFetcher)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        return $transUnitService->getLocales();
     }
 
 }

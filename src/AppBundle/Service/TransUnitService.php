@@ -56,7 +56,7 @@ class TransUnitService
      */
     public function countByDomains()
     {
-        $repository = $this->getRepository();
+        $repository = $this->getRepository('TransUnit');
         $totalTranslations = $repository->countByDomains();
 
         return $totalTranslations;
@@ -69,20 +69,29 @@ class TransUnitService
      */
     public function getCountTranslationByLocales($domain)
     {
-        $repository = $this->getRepository();
-        $totalTranslations = $repository->getCountTranslationByLocales($domain);
+        $repository = $this->getRepository('TransUnit');
+        $totalTranslationsLocale = $repository->getCountTranslationByLocales($domain);
 
-        return $totalTranslations;
+        return $totalTranslationsLocale;
+    }
+
+    public function getLocales()
+    {
+        $repository = $this->getRepository('File');
+        $locales = $repository->getLocales();
+
+        return $locales;
     }
 
     /**
-     * Get repository for database
+     * Get specify repository for database
+     * @param $repositoryName
      * @return \Doctrine\Common\Persistence\ObjectRepository
      */
-    private function getRepository()
+    private function getRepository($repositoryName)
     {
         $em = $this->doctrine->getManager();
-        $repository = $em->getRepository('AppBundle:TransUnit');
+        $repository = $em->getRepository('AppBundle:'.$repositoryName);
 
         return $repository;
     }
