@@ -123,7 +123,6 @@ class TransUnitRepository extends EntityRepository
             ->getArrayResult();
 
         return $transUnits;
-
     }
 
     /**
@@ -167,6 +166,8 @@ class TransUnitRepository extends EntityRepository
     }
 
     /**
+     * Return total number of translations for each domain - WORK (IN USE)
+     *
      * @return array
      */
     public function countByDomains()
@@ -176,6 +177,26 @@ class TransUnitRepository extends EntityRepository
             ->groupBy('tu.domain')
             ->getQuery()
             ->getArrayResult();
+    }
+
+    public function getCountTranslationByLocales($domain)
+    {
+
+        //select tu.domain, ts.locale, count(ts.locale) from lexik_trans_unit tu
+        //join lexik_trans_unit_translations ts on (tu.id = ts.trans_unit_id) where tu.domain = 'messages' group by ts.locale, tu.domain order by tu.domain;
+
+        $qb = $this->createQueryBuilder('tu');
+
+        $translationsByLocales = $qb->select('tu.domain', 'ts.locale', 'count(ts.locale) as total')
+            ->join('AppBundle:Translation','ts')
+            ->where('tu.id = ts.transUnit')
+            ->andWhere('tu.domain = :domain')
+            ->setParameter('domain',$domain)
+            ->groupBy('ts.locale')
+            ->getQuery()
+            ->getArrayResult();
+
+        return $translationsByLocales;
     }
 
     /**

@@ -25,13 +25,37 @@ class TransUnitController extends RestController
 
 //        $view = $this->view('My first API with id ' . $fileId, Response::HTTP_OK);
 //        return $this->handleView($view);
-
 //        $param = $paramFetcher->get('id');
 
         $transUnitService = $this->container->get('app_bundle.service.trans_unit');
 
 
-        return $transUnitService->getTranslation($translationId);
+        return $transUnitService->countByDomains();
+    }
+
+    /**
+     * @FOS\View()
+     * @FOS\Get("/count/domains")
+     *
+     * @param ParamFetcherInterface $paramFetcher
+     * @return mixed
+     */
+    public function getCountByDomainsAction(ParamFetcherInterface $paramFetcher)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        return $transUnitService->countByDomains();
+    }
+
+    /**
+     * @FOS\View()
+     * @FOS\Get("/count/{domain}")
+     *
+     * @return mixed
+     */
+    public function getCountTranslationByLocalesAction(ParamFetcherInterface $paramFetcher, $domain)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        return $transUnitService->getCountTranslationByLocales($domain);
     }
 
 }

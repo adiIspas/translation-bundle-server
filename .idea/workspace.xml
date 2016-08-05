@@ -25,9 +25,11 @@
       <file leaf-file-name="TransUnitController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="690">
+              <caret line="57" column="62" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="62" />
+              <folding>
+                <element signature="e#40#71#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -35,8 +37,8 @@
       <file leaf-file-name="TransUnitService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
+            <state relative-caret-position="673">
+              <caret line="72" column="70" selection-start-line="72" selection-start-column="70" selection-end-line="72" selection-end-column="70" />
               <folding>
                 <element signature="e#128#173#0#PHP" expanded="true" />
               </folding>
@@ -47,8 +49,8 @@
       <file leaf-file-name="TransUnitRepository.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TransUnitRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="157" column="82" selection-start-line="157" selection-start-column="82" selection-end-line="157" selection-end-column="82" />
+            <state relative-caret-position="561">
+              <caret line="189" column="97" selection-start-line="189" selection-start-column="97" selection-end-line="189" selection-end-column="97" />
               <folding>
                 <element signature="e#40#88#0#PHP" expanded="true" />
               </folding>
@@ -125,7 +127,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/TransUnit.orm.xml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/File.orm.xml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Translation.orm.xml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/LexikTranslationFile.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/LexikTransUnit.php" />
@@ -133,6 +134,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/TransUnit.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/File.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Translation.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/TransUnitRepository.php" />
       </list>
@@ -526,7 +528,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35695000" />
+    <option name="totallyTimeSpent" value="39194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -651,7 +653,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="e#40#71#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -949,16 +953,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="690">
+          <caret line="57" column="62" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="62" />
+          <folding>
+            <element signature="e#40#71#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
+        <state relative-caret-position="673">
+          <caret line="72" column="70" selection-start-line="72" selection-start-column="70" selection-end-line="72" selection-end-column="70" />
           <folding>
             <element signature="e#128#173#0#PHP" expanded="true" />
           </folding>
@@ -967,8 +973,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TransUnitRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="157" column="82" selection-start-line="157" selection-start-column="82" selection-end-line="157" selection-end-column="82" />
+        <state relative-caret-position="561">
+          <caret line="189" column="97" selection-start-line="189" selection-start-column="97" selection-end-line="189" selection-end-column="97" />
           <folding>
             <element signature="e#40#88#0#PHP" expanded="true" />
           </folding>
