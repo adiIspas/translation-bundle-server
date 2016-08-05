@@ -7,6 +7,7 @@ use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\EntityRepository;
 use AppBundle\Model\File as ModelFile;
+use AppBundle\Entity\Translation;
 
 
 class TransUnitRepository extends EntityRepository
@@ -104,6 +105,21 @@ class TransUnitRepository extends EntityRepository
         }
         
         return $transUnits;
+    }
+
+    public function getAllTranslations()
+    {
+        $qb = $this->createQueryBuilder('tu');
+
+        $transUnits = $qb->select('tu.id','tu.domain', 'tu.keyName', 'ts.locale', 'ts.content')
+            ->join('AppBundle:Translation','ts')
+            ->where('tu.id = ts.transUnit')
+            ->orderBy('tu.id')
+            ->getQuery()
+            ->getArrayResult();
+
+        return $transUnits;
+
     }
 
     /**

@@ -5,12 +5,13 @@ namespace AppBundle\Entity;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use AppBundle\Model\File as FileModel;
 use AppBundle\Manager\FileInterface;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * LexikTranslationFile
  *
  * @ORM\Table(name="lexik_translation_file", uniqueConstraints={@ORM\UniqueConstraint(name="hash_idx", columns={"hash"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\FileRepository")
  */
 class File extends FileModel implements FileInterface
 {

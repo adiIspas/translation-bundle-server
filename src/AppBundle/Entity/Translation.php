@@ -5,12 +5,13 @@ namespace AppBundle\Entity;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use AppBundle\Model\Translation as TranslationModel;
 use AppBundle\Manager\TranslationInterface;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * LexikTransUnitTranslations
  *
  * @ORM\Table(name="lexik_trans_unit_translations", uniqueConstraints={@ORM\UniqueConstraint(name="trans_unit_locale_idx", columns={"trans_unit_id", "locale"})}, indexes={@ORM\Index(name="IDX_B0AA394493CB796C", columns={"file_id"}), @ORM\Index(name="IDX_B0AA3944C3C583C9", columns={"trans_unit_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TranslationRepository")
  */
 class Translation extends TranslationModel implements TranslationInterface
 {
@@ -52,9 +53,9 @@ class Translation extends TranslationModel implements TranslationInterface
     protected $updatedAt;
 
     /**
-     * @var \LexikTranslationFile
+     * @var \File
      *
-     * @ORM\ManyToOne(targetEntity="LexikTranslationFile")
+     * @ORM\ManyToOne(targetEntity="File")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="file_id", referencedColumnName="id")
      * })
@@ -62,9 +63,9 @@ class Translation extends TranslationModel implements TranslationInterface
     protected $file;
 
     /**
-     * @var \LexikTransUnit
+     * @var \TransUnit
      *
-     * @ORM\ManyToOne(targetEntity="LexikTransUnit")
+     * @ORM\ManyToOne(targetEntity="TransUnit")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="trans_unit_id", referencedColumnName="id")
      * })
