@@ -7,3 +7,5 @@
 4) Sa creez un exemplu de test in care fac un query in baza de date.
 
 Sa citesc despre verbele de acces si despre codurile de status.
+
+5) // TO DO - Trebuie sa apelezi o functie de API

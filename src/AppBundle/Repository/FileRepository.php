@@ -41,10 +41,14 @@ class FileRepository extends EntityRepository
     {
         $qb = $this->createQueryBuilder('f');
 
-        $locales = $qb->select('distinct f.locale')
+        $response = $qb->select('distinct f.locale')
             ->getQuery()
             ->getArrayResult();
 
+        $locales = array();
+        foreach ($response as $locale) {
+            $locales[] = $locale['locale'];
+        }
         return $locales;
     }
 }

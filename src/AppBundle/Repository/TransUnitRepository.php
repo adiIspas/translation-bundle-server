@@ -172,11 +172,18 @@ class TransUnitRepository extends EntityRepository
      */
     public function countByDomains()
     {
-        return $this->createQueryBuilder('tu')
+        $response = $this->createQueryBuilder('tu')
             ->select('COUNT(DISTINCT tu.id) AS number, tu.domain')
             ->groupBy('tu.domain')
             ->getQuery()
             ->getArrayResult();
+
+        $counts = array();
+        foreach ($response as $domain) {
+            $counts[$domain['domain']] = (int)$domain['number'];
+        }
+
+        return $counts;
     }
 
     /**
@@ -198,7 +205,12 @@ class TransUnitRepository extends EntityRepository
             ->getQuery()
             ->getArrayResult();
 
-        return $translationsByLocales;
+        $counts = array();
+        foreach ($translationsByLocales as $row) {
+            $counts[$row['locale']] = (int) $row['total'];
+        }
+
+        return $counts;
     }
 
     /**
