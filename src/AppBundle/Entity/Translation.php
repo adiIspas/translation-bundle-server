@@ -8,7 +8,7 @@ use AppBundle\Manager\TranslationInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * LexikTransUnitTranslations
+ * Translations
  *
  * @ORM\Table(name="lexik_trans_unit_translations", uniqueConstraints={@ORM\UniqueConstraint(name="trans_unit_locale_idx", columns={"trans_unit_id", "locale"})}, indexes={@ORM\Index(name="IDX_B0AA394493CB796C", columns={"file_id"}), @ORM\Index(name="IDX_B0AA3944C3C583C9", columns={"trans_unit_id"})})
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TranslationRepository")
@@ -65,7 +65,7 @@ class Translation extends TranslationModel implements TranslationInterface
     /**
      * @var \TransUnit
      *
-     * @ORM\ManyToOne(targetEntity="TransUnit")
+     * @ORM\ManyToOne(targetEntity="TransUnit", inversedBy="translations")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="trans_unit_id", referencedColumnName="id")
      * })

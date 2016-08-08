@@ -113,6 +113,31 @@ class TransUnitService
     }
 
     /**
+     * Return all translations
+     * @return mixed
+     */
+    public function getAllTranslations(array $locales = null, $rows = 20, $page = 1, array $filters = null)
+    {
+        $repository = $this->getRepository('TransUnit');
+        $translations = $repository->getTransUnitList($locales,$rows,$page,$filters);
+
+        return $translations;
+    }
+
+    /**
+     * Return total number of translations
+     * @return mixed
+     */
+    public function count()
+    {
+        $repository = $this->getRepository('TransUnit');
+        $counts = $repository->count();
+
+        return $counts;
+    }
+
+
+    /**
      * Get specify repository for database
      * @param $repositoryName
      * @return \Doctrine\Common\Persistence\ObjectRepository

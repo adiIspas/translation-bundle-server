@@ -52,6 +52,13 @@ class TransUnit extends TransUnitModel implements TransUnitInterface
      */
     protected $updatedAt;
 
+    /**
+     * @var \Translation
+     * @ORM\OneToMany(targetEntity="Translation", mappedBy="transUnit")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id", referencedColumnName="trans_unit_id")
+     * })
+     */
     protected $translations;
 
     /**

@@ -103,7 +103,7 @@ class TransUnitRepository extends EntityRepository
                 ->getQuery()
                 ->getArrayResult();
         }
-        
+
         return $transUnits;
     }
 
@@ -122,7 +122,19 @@ class TransUnitRepository extends EntityRepository
             ->getQuery()
             ->getArrayResult();
 
-        return $transUnits;
+        $translations = array();
+        foreach($transUnits as $translation) {
+//            //$translations['translations'][] = array();
+//            $translations['translations']['_id'] = $translation['id'];
+//            $translations['translations']['_domain'] = $translation['domain'];
+//            $translations['translations']['_key'] = $translation['keyName'];
+//            //$translations['translations']['ro'] = $translation['locale']['ro'];
+             $translations['translations'][] = array();
+
+
+        }
+
+        return $translations;
     }
 
     /**
@@ -275,8 +287,9 @@ class TransUnitRepository extends EntityRepository
     {
         if (null !== $locales) {
             $qb = $this->createQueryBuilder('tu');
+
             $qb->select('DISTINCT tu.id')
-                ->leftJoin('tu.translations', 't')
+                ->leftJoin('AppBundle:Translation', 't')
                 ->where($qb->expr()->in('t.locale', $locales));
 
             foreach ($locales as $locale) {

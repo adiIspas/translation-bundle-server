@@ -10,29 +10,11 @@ use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\Controller\Annotations as FOS;
 use AppBundle\Service\TransUnitService;
+use FOS\RestBundle\Controller\Annotations\RequestParam;
+
 
 class TransUnitController extends RestController
 {
-    /**
-     * @FOS\View()
-     * @FOS\Post("/translations/{translationId}")
-     *
-     * @param $translationId
-     * @return Response
-     */
-    public function postFileAction(ParamFetcherInterface $paramFetcher, $translationId)
-    {
-
-//        $view = $this->view('My first API with id ' . $fileId, Response::HTTP_OK);
-//        return $this->handleView($view);
-//        $param = $paramFetcher->get('id');
-
-        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
-
-
-        return $transUnitService->countByDomains();
-    }
-
     /**
      * Return total number of translations for each domain
      *
@@ -106,5 +88,42 @@ class TransUnitController extends RestController
         $transUnitService = $this->container->get('app_bundle.service.trans_unit');
         return $transUnitService->getLatestTranslationUpdatedAt();
     }
+
+    /**
+     * Get all translations
+     *
+     * @RequestParam(name="locales", requirements="\w+", nullable=true, allowBlank=true, description="Locales")
+     *
+     * @FOS\View()
+     * @FOS\Post("/all_translations")
+     *
+     * @return mixed
+     */
+    public function postAllTranslationsAction(Request $request)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+
+        $requestParams = $request->request->all();
+
+        $locales = $requestParams['locales'];
+        $rows = $requestParams['rows'];
+        $page = $requestParams['page'];
+        $filters = $requestParams['filters'];
+
+        return $transUnitService->getAllTranslations($locales, $rows, $page, $filters);
+    }
+
+    /**
+     * Return number of translations
+     * @FOS\View()
+     * @FOS\Get("/count")
+     * @return mixed
+     */
+    public function getCountAction()
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        return $transUnitService->count();
+    }
+
 
 }
