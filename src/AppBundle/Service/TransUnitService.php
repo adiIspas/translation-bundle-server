@@ -14,6 +14,7 @@ use AppBundle\Storage\AbstractDoctrineStorage;
 use AppBundle\Storage\DoctrineORMStorage;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class TransUnitService
 {
@@ -75,12 +76,40 @@ class TransUnitService
         return $totalTranslationsLocale;
     }
 
+    /**
+     * Return all locales
+     * @return mixed
+     */
     public function getLocales()
     {
         $repository = $this->getRepository('File');
         $locales = $repository->getLocales();
 
         return $locales;
+    }
+
+    /**
+     * Return all domains
+     * @return mixed
+     */
+    public function getDomains()
+    {
+        $repository = $this->getRepository('File');
+        $domains = $repository->getDomains();
+
+        return $domains;
+    }
+
+    /**
+     * Return lastest updated date
+     * @return \DateTime|null
+     */
+    public function getLatestTranslationUpdatedAt()
+    {
+        $repository = $this->getRepository('Translation');
+        $latestUpdated = $repository->getLatestTranslationUpdatedAt();
+
+        return $latestUpdated;
     }
 
     /**

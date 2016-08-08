@@ -34,7 +34,7 @@ class FileRepository extends EntityRepository
     }
 
     /**
-     * Get all locales - - WORK (IN USE)
+     * Get all locales - WORK (IN USE)
      * @return array
      */
     public function getLocales()
@@ -50,5 +50,25 @@ class FileRepository extends EntityRepository
             $locales[] = $locale['locale'];
         }
         return $locales;
+    }
+
+    /**
+     * Get all domains - WORK (IN USE)
+     * @return array
+     */
+    public function getDomains()
+    {
+        $qb = $this->createQueryBuilder('f');
+
+        $response = $qb->select('distinct f.domain')
+            ->orderBy('f.domain')
+            ->getQuery()
+            ->getArrayResult();
+
+        $domains = array();
+        foreach ($response as $domain) {
+            $domains[] = $domain['domain'];
+        }
+        return $domains;
     }
 }

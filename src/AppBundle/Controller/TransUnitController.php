@@ -77,4 +77,34 @@ class TransUnitController extends RestController
         return $transUnitService->getLocales();
     }
 
+    /**
+     * Get all domains
+     *
+     * @FOS\View()
+     * @FOS\Get("/domains")
+     *
+     * @param ParamFetcherInterface $paramFetcher
+     * @return mixed
+     */
+    public function getDomainsAction(ParamFetcherInterface $paramFetcher)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        return $transUnitService->getDomains();
+    }
+
+    /**
+     * Get latest updated translation
+     *
+     * @FOS\View()
+     * @FOS\Get("/latest_updated")
+     *
+     * @param ParamFetcherInterface $paramFetcher
+     * @return \DateTime|null
+     */
+    public function getLatestTranslationUpdatedAtAction(ParamFetcherInterface $paramFetcher)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        return $transUnitService->getLatestTranslationUpdatedAt();
+    }
+
 }
