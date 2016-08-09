@@ -66,8 +66,8 @@ class TransUnitRepository extends EntityRepository
      * Returns some trans units with their translations.
      *
      * @param array $locales
-     * @param int   $rows
-     * @param int   $page
+     * @param int $rows
+     * @param int $page
      * @param array $filters
      * @return array
      */
@@ -104,37 +104,12 @@ class TransUnitRepository extends EntityRepository
                 ->getArrayResult();
         }
 
-        return $transUnits;
-    }
-
-    /**
-     * Get all translations from database - WORK
-     * @return array
-     */
-    public function getAllTranslations()
-    {
-        $qb = $this->createQueryBuilder('tu');
-
-        $transUnits = $qb->select('tu.id','tu.domain', 'tu.keyName', 'ts.locale', 'ts.content')
-            ->join('AppBundle:Translation','ts')
-            ->where('tu.id = ts.transUnit')
-            ->orderBy('tu.id')
-            ->getQuery()
-            ->getArrayResult();
-
-        $translations = array();
-        foreach($transUnits as $translation) {
-//            //$translations['translations'][] = array();
-//            $translations['translations']['_id'] = $translation['id'];
-//            $translations['translations']['_domain'] = $translation['domain'];
-//            $translations['translations']['_key'] = $translation['keyName'];
-//            //$translations['translations']['ro'] = $translation['locale']['ro'];
-             $translations['translations'][] = array();
-
-
+        foreach($transUnits as &$transUnit){
+            $transUnit['key'] = $transUnit['keyName'];
+            unset($transUnit['keyName']);
         }
 
-        return $translations;
+        return $transUnits;
     }
 
     /**
@@ -144,7 +119,7 @@ class TransUnitRepository extends EntityRepository
      * @param array $filters
      * @return int
      */
-    public function count(array $locales = null,  array $filters = null)
+    public function count(array $locales = null, array $filters = null)
     {
         $this->loadCustomHydrator();
 
@@ -154,7 +129,7 @@ class TransUnitRepository extends EntityRepository
         $this->addTransUnitFilters($builder, $filters);
         $this->addTranslationFilter($builder, $locales, $filters);
 
-        return (int) $builder->getQuery()->getResult(Query::HYDRATE_SINGLE_SCALAR);
+        return (int)$builder->getQuery()->getResult(Query::HYDRATE_SINGLE_SCALAR);
     }
 
     /**
@@ -162,12 +137,10 @@ class TransUnitRepository extends EntityRepository
      */
     public function countByLocaleAndDomain()
     {
-        // select tu.domain, ts.locale, count(ts.locale) from lexik_trans_unit tu join lexik_trans_unit_translations ts on (tu.id = ts.trans_unit_id) group by ts.locale;
-
         $qb = $this->createQueryBuilder('tu');
 
         $counts = $qb->select('tu.domain', 'ts.locale', 'count(ts.locale) as total')
-            ->join('AppBundle:Translation','ts')
+            ->join('AppBundle:Translation', 'ts')
             ->where('tu.id = ts.transUnit')
             ->groupBy('ts.locale')
             ->orderBy('tu.domain')
@@ -209,17 +182,17 @@ class TransUnitRepository extends EntityRepository
         $qb = $this->createQueryBuilder('tu');
 
         $translationsByLocales = $qb->select('tu.domain', 'ts.locale', 'count(ts.locale) as total')
-            ->join('AppBundle:Translation','ts')
+            ->join('AppBundle:Translation', 'ts')
             ->where('tu.id = ts.transUnit')
             ->andWhere('tu.domain = :domain')
-            ->setParameter('domain',$domain)
+            ->setParameter('domain', $domain)
             ->groupBy('ts.locale')
             ->getQuery()
             ->getArrayResult();
 
         $counts = array();
         foreach ($translationsByLocales as $row) {
-            $counts[$row['locale']] = (int) $row['total'];
+            $counts[$row['locale']] = (int)$row['total'];
         }
 
         return $counts;
@@ -229,7 +202,7 @@ class TransUnitRepository extends EntityRepository
      * Returns all translations for the given file.
      *
      * @param ModelFile $file
-     * @param boolean   $onlyUpdated
+     * @param boolean $onlyUpdated
      * @return array
      */
     public function getTranslationsForFile(ModelFile $file, $onlyUpdated)

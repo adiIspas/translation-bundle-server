@@ -12,6 +12,7 @@ namespace AppBundle\Service;
 use AppBundle\Repository\TransUnitRepository;
 use AppBundle\Storage\AbstractDoctrineStorage;
 use AppBundle\Storage\DoctrineORMStorage;
+use AppBundle\Util\DataGrid\DataGridRequestHandler;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Validator\Constraints\DateTime;
@@ -30,25 +31,6 @@ class TransUnitService
     public function __construct(Registry $doctrine)
     {
         $this->doctrine = $doctrine;
-    }
-
-    public function getTranslation($translationId)
-    {
-        $files = array();
-        $files['id'] = $translationId;
-        $files['key'] = 'translations.key';
-        $files['locale'] = array();
-        $files['locale']['ro'] = 'cheie';
-        $files['locale']['en'] = 'key';
-
-        $em = $this->doctrine->getManager();
-        $repository = $em->getRepository('AppBundle:TransUnit');
-
-        $transUnits = $repository->countByDomains();
-        //$transUnits = $repository->countByDomains();
-        //$transUnits = $repository->findAll();
-        
-        return $transUnits;
     }
 
     /**
@@ -134,6 +116,19 @@ class TransUnitService
         $counts = $repository->count();
 
         return $counts;
+    }
+
+    /**
+     * Get translation by id
+     * @param $id
+     * @return mixed
+     */
+    public function getTransUnitById($id)
+    {
+        $repository = $this->getRepository('TransUnit');
+        $transUnit = $repository->findById($id);
+
+        return $transUnit;
     }
 
 

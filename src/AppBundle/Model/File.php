@@ -199,17 +199,17 @@ abstract class File
         return $this->hash;
     }
 
-    /**
-     * Add translation
-     *
-     * @param Lexik\Bundle\TranslationBundle\Model\Translation $translation
-     */
-    public function addTranslation(\Lexik\Bundle\TranslationBundle\Model\Translation $translation)
-    {
-        $translation->setFile($this);
-
-        $this->translations[] = $translation;
-    }
+//    /**
+//     * Add translation
+//     *
+//     * @param Lexik\Bundle\TranslationBundle\Model\Translation $translation
+//     */
+//    public function addTranslation(\Lexik\Bundle\TranslationBundle\Model\Translation $translation)
+//    {
+//        $translation->setFile($this);
+//
+//        $this->translations[] = $translation;
+//    }
 
     /**
      * Get translations

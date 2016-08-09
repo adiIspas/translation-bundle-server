@@ -119,11 +119,62 @@ class TransUnitController extends RestController
      * @FOS\Get("/count")
      * @return mixed
      */
-    public function getCountAction()
+    public function getCountAction(ParamFetcherInterface $paramFetcher)
     {
         $transUnitService = $this->container->get('app_bundle.service.trans_unit');
         return $transUnitService->count();
     }
 
+    /**
+     * Get translation by id
+     * @FOS\View()
+     * @FOS\Get("/find_by_id/{id}")
+     * @return mixed
+     */
+    public function getTransUnitByIdAction(ParamFetcherInterface $paramFetcher,$id)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        return $transUnitService->getTransUnitById($id);
+    }
+
+
+    /**
+     * Update translation
+     * @FOS\View()
+     * @FOS\Post("/update")
+     * @param Request $request
+     * @return mixed
+     */
+    public function postUpdateFromRequestAction(Request $request)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+
+        $requestParams = $request->request->all();
+        $id = $requestParams['id'];
+        $locale = $requestParams['locale'];
+        $content = $requestParams['content'];
+
+//        $translations = array();
+//
+//        $translations['ro'] = 'Bun Venit';
+//        $translations['en'] = 'Welcomee';
+
+        $transUnitResponse = $transUnitService->getTransUnitById($id);
+        $transUnit = $transUnitResponse[0];
+
+        $translation = $transUnit->getTranslation($locale);
+        $translation->setContent($content);
+
+//        foreach ($translations as $locale => $translation) {
+//            $transUnit->getTranslation($locale)->setContent($translation);
+//        }
+
+        file_put_contents('parametri.log', $id . " " . $locale . " " . $content);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->flush();
+
+        return $translation;
+    }
 
 }
