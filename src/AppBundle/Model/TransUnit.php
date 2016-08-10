@@ -67,25 +67,25 @@ abstract class TransUnit
         return $this->id;
     }
 
-    /**
-     * Set key name
-     *
-     * @param string $key
-     */
-    public function setKey($key)
-    {
-        $this->key = $key;
-    }
+//    /**
+//     * Set key name
+//     *
+//     * @param string $key
+//     */
+//    public function setKey($key)
+//    {
+//        $this->key = $key;
+//    }
 
-    /**
-     * Get key name
-     *
-     * @return string
-     */
-    public function getKey()
-    {
-        return $this->key;
-    }
+//    /**
+//     * Get key name
+//     *
+//     * @return string
+//     */
+//    public function getKey()
+//    {
+//        return $this->key;
+//    }
 
     /**
      * Set domain

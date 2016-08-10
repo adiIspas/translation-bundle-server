@@ -1,0 +1,61 @@
+AppBundle\Entity\TransUnit Object
+(
+    [id:protected] => 
+    [keyName:protected] => translations.merge
+    [domain:protected] => messages
+    [createdAt:protected] => 
+    [updatedAt:protected] => 
+    [translations:protected] => Doctrine\Common\Collections\ArrayCollection Object
+        (
+            [elements:Doctrine\Common\Collections\ArrayCollection:private] => Array
+                (
+                    [0] => AppBundle\Entity\Translation Object
+                        (
+                            [id:protected] => 
+                            [locale:protected] => ro
+                            [content:protected] => Merge
+                            [createdAt:protected] => 
+                            [updatedAt:protected] => 
+                            [file:protected] => AppBundle\Entity\File Object
+                                (
+                                    [id:protected] => 207
+                                    [domain:protected] => messages
+                                    [locale:protected] => ro
+                                    [extention:protected] => yml
+                                    [path:protected] => Resources/translations
+                                    [hash:protected] => 84cdfd8b4d5b087f1c3a49e06f4b96db
+                                    [translations:protected] => 
+                                )
+
+                            [transUnit:protected] => AppBundle\Entity\TransUnit Object
+ *RECURSION*
+                        )
+
+                    [1] => AppBundle\Entity\Translation Object
+                        (
+                            [id:protected] => 
+                            [locale:protected] => en
+                            [content:protected] => Go
+                            [createdAt:protected] => 
+                            [updatedAt:protected] => 
+                            [file:protected] => AppBundle\Entity\File Object
+                                (
+                                    [id:protected] => 208
+                                    [domain:protected] => messages
+                                    [locale:protected] => en
+                                    [extention:protected] => yml
+                                    [path:protected] => Resources/translations
+                                    [hash:protected] => fc74f6a74137e00463e84910ddb3e44e
+                                    [translations:protected] => 
+                                )
+
+                            [transUnit:protected] => AppBundle\Entity\TransUnit Object
+ *RECURSION*
+                        )
+
+                )
+
+        )
+
+    [key:protected] => 
+)

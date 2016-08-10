@@ -89,4 +89,14 @@ class TransUnit extends TransUnitModel implements TransUnitInterface
     {
         $this->updatedAt = new \DateTime("now");
     }
+
+    public function setKey($key)
+    {
+        $this->keyName = $key;
+    }
+
+    public function getKey()
+    {
+        return $this->keyName;
+    }
 }

@@ -131,10 +131,28 @@ class TransUnitService
         return $transUnit;
     }
 
+    /**
+     * Get file by id
+     * @param $id
+     * @return mixed
+     */
     public function getFileById($id)
     {
         $repository = $this->getRepository('File');
         $file = $repository->findById($id);
+
+        return $file;
+    }
+
+    /**
+     * Get file by hash
+     * @param $hash
+     * @return mixed
+     */
+    public function getFileByHash($hash)
+    {
+        $repository = $this->getRepository('File');
+        $file = $repository->findOneBy(array('hash' => $hash));
 
         return $file;
     }

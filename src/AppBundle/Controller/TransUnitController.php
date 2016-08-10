@@ -5,6 +5,8 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\File;
 use AppBundle\Entity\Translation;
 use AppBundle\Entity\TransUnit;
+use AppBundle\Manager\FileInterface;
+use AppBundle\Manager\FileManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -204,5 +206,50 @@ class TransUnitController extends RestController
         $em->flush();
 
         return $translation;
+    }
+
+    /**
+     * Add new translation
+     * @FOS\View()
+     * @FOS\Post("/add_new_translation")
+     * @param Request $request
+     * @return bool
+     */
+    public function postAddNewTranslationAction(Request $request)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        $requestParams = $request->request->all();
+
+        $em = $this->getDoctrine()->getManager();
+        $fileManager = new FileManager();
+
+        $key = $requestParams['key'];
+        $domain = $requestParams['domain'];
+        $locales = $requestParams['locales'];
+        $rootDir = $requestParams['rootDir'];
+
+        $transUnit = new TransUnit();
+        $transUnit->setKey($key);
+        $transUnit->setDomain($domain);
+
+        foreach ($locales as $locale => $content) {
+            $translation = new Translation();
+            $translation->setTransUnit($transUnit);
+            $translation->setLocale($locale);
+            $translation->setContent($content);
+
+            $file = $fileManager->getFor(sprintf('%s.%s.yml', $transUnit->getDomain(), $translation->getLocale()), $rootDir.'/Resources/translations', $em, $transUnitService);
+
+            if ($file instanceof FileInterface) {
+                $translation->setFile($file);
+            }
+
+            $transUnit->addTranslation($translation);
+        }
+
+        $em->persist($transUnit);
+        $em->flush();
+
+        return $transUnit;
     }
 }

@@ -11,3 +11,5 @@ Sa citesc despre verbele de acces si despre codurile de status.
 5) // TO DO - Trebuie sa apelezi o functie de API
 
 6) Sa iau id si traducerile si sa le trimit in metoda de API
+
+7) Inlocuire problema la keyName in TransUnit si key in TransUnitModel
