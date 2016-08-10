@@ -55,7 +55,7 @@ class Translation extends TranslationModel implements TranslationInterface
     /**
      * @var \File
      *
-     * @ORM\ManyToOne(targetEntity="File")
+     * @ORM\ManyToOne(targetEntity="File", cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="file_id", referencedColumnName="id")
      * })

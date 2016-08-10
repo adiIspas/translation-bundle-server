@@ -2,6 +2,8 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\File;
+use AppBundle\Entity\Translation;
 use AppBundle\Entity\TransUnit;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -11,6 +13,7 @@ use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\Controller\Annotations as FOS;
 use AppBundle\Service\TransUnitService;
 use FOS\RestBundle\Controller\Annotations\RequestParam;
+use AppBundle\Manager\TransUnitManager;
 
 
 class TransUnitController extends RestController
@@ -154,22 +157,11 @@ class TransUnitController extends RestController
         $locale = $requestParams['locale'];
         $content = $requestParams['content'];
 
-//        $translations = array();
-//
-//        $translations['ro'] = 'Bun Venit';
-//        $translations['en'] = 'Welcomee';
-
         $transUnitResponse = $transUnitService->getTransUnitById($id);
         $transUnit = $transUnitResponse[0];
 
         $translation = $transUnit->getTranslation($locale);
         $translation->setContent($content);
-
-//        foreach ($translations as $locale => $translation) {
-//            $transUnit->getTranslation($locale)->setContent($translation);
-//        }
-
-        file_put_contents('parametri.log', $id . " " . $locale . " " . $content);
 
         $em = $this->getDoctrine()->getManager();
         $em->flush();
@@ -177,4 +169,40 @@ class TransUnitController extends RestController
         return $translation;
     }
 
+    /**
+     * Update translation
+     * @FOS\View()
+     * @FOS\Post("/add_translation_content")
+     * @param Request $request
+     * @return mixed
+     */
+    public function postAddTranslationContentAction(Request $request)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+
+        $requestParams = $request->request->all();
+        $id = $requestParams['id'];
+        $locale = $requestParams['locale'];
+        $content = $requestParams['content'];
+        $fileId = $requestParams['idFile'];
+
+        $transUnitResponse = $transUnitService->getTransUnitById($id);
+        $transUnit = $transUnitResponse[0];
+
+        $translation = new Translation();
+        $translation->setLocale($locale);
+        $translation->setContent($content);
+        $translation->setTransUnit($transUnit);
+
+        $file = $transUnitService->getFileById($fileId);
+
+        $translation->setFile($file[0]);
+        $transUnit->addTranslation($translation);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($transUnit);
+        $em->flush();
+
+        return $translation;
+    }
 }

@@ -131,6 +131,14 @@ class TransUnitService
         return $transUnit;
     }
 
+    public function getFileById($id)
+    {
+        $repository = $this->getRepository('File');
+        $file = $repository->findById($id);
+
+        return $file;
+    }
+
 
     /**
      * Get specify repository for database

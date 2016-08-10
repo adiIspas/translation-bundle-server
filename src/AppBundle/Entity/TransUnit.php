@@ -54,7 +54,7 @@ class TransUnit extends TransUnitModel implements TransUnitInterface
 
     /**
      * @var \Translation
-     * @ORM\OneToMany(targetEntity="Translation", mappedBy="transUnit")
+     * @ORM\OneToMany(targetEntity="Translation", mappedBy="transUnit", cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id", referencedColumnName="trans_unit_id")
      * })
