@@ -252,4 +252,23 @@ class TransUnitController extends RestController
 
         return $transUnit;
     }
+
+    /**
+     * Find TransUnit by criteria array
+     * @FOS\View()
+     * @FOS\Post("/find_by")
+     * @param Request $request
+     * @return mixed
+     */
+    public function postFindByAction(Request $request)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        $requestParams = $request->request->all();
+
+        $criteria = array();
+        $criteria['keyName'] = $requestParams['key'];
+        $criteria['domain'] = $requestParams['domain'];
+
+        return $transUnitService->findBy($criteria);
+    }
 }

@@ -157,7 +157,17 @@ class TransUnitService
         return $file;
     }
 
-
+    /**
+     * Find TransUnit by criteria array
+     * @param array $criteria
+     * @return array
+     */
+    public function findBy(array $criteria)
+    {
+        $repository = $this->getRepository('TransUnit');
+        return $repository->findBy($criteria);
+    }
+    
     /**
      * Get specify repository for database
      * @param $repositoryName
