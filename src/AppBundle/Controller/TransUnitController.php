@@ -293,4 +293,21 @@ class TransUnitController extends RestController
 
         return $file;
     }
+
+    /**
+     * @param Request $request
+     * @FOS\View()
+     * @FOS\Post("/find_for_locales_and_domains")
+     * @return mixed
+     */
+    public function postFindForLocalesAndDomainsAction(Request $request)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        $requestParams = $request->request->all();
+        
+        $locales = $requestParams['locales'];
+        $domains = $requestParams['domains'];
+        
+        return $transUnitService->findForLocalesAndDomains($locales, $domains);
+    }
 }

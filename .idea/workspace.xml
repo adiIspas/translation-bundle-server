@@ -22,14 +22,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TransUnitController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TransUnitController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="280" column="37" selection-start-line="280" selection-start-column="37" selection-end-line="280" selection-end-column="37" />
+            <state relative-caret-position="695">
+              <caret line="309" column="8" selection-start-line="309" selection-start-column="8" selection-end-line="309" selection-end-column="8" />
               <folding>
                 <element signature="e#40#66#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FileRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -44,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransUnitService.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TransUnitService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
+            <state relative-caret-position="537">
+              <caret line="185" column="59" selection-start-line="185" selection-start-column="51" selection-end-line="185" selection-end-column="59" />
               <folding>
                 <element signature="e#128#173#0#PHP" expanded="true" />
               </folding>
@@ -59,7 +69,7 @@
       <file leaf-file-name="TransUnitRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TransUnitRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
+            <state relative-caret-position="1285">
               <caret line="245" column="65" selection-start-line="245" selection-start-column="62" selection-end-line="245" selection-end-column="65" />
               <folding>
                 <element signature="e#40#88#0#PHP" expanded="true" />
@@ -71,7 +81,7 @@
       <file leaf-file-name="BasicEntityPersister.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14450">
+            <state relative-caret-position="344">
               <caret line="883" column="66" selection-start-line="883" selection-start-column="66" selection-end-line="883" selection-end-column="66" />
               <folding>
                 <marker date="1470925140181" expanded="true" signature="52262:52293" ph="INSERT INTO " />
@@ -117,7 +127,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/LexikTransUnit.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/LexikTransUnitTranslations.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/File.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/FileRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Manager/LocaleManagerInterface.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Manager/TransUnitManagerInterface.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Util/DataGrid/DataGridRequestHandler.php" />
@@ -131,9 +140,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Manager/FileManager.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/TransUnit.php" />
         <option value="$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Model/TransUnit.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/FileRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php" />
       </list>
     </option>
   </component>
@@ -769,12 +779,12 @@
       <option name="presentableId" value="Default" />
       <updated>1470227446711</updated>
       <workItem from="1470227448151" duration="24970000" />
-      <workItem from="1471331338166" duration="2903000" />
+      <workItem from="1471331338166" duration="6722000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109351000" />
+    <option name="totallyTimeSpent" value="113170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -980,13 +990,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/TranslationRepository.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FileRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="39" column="32" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Model/Translation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
@@ -1124,7 +1127,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14450">
+        <state relative-caret-position="344">
           <caret line="883" column="66" selection-start-line="883" selection-start-column="66" selection-end-line="883" selection-end-column="66" />
           <folding>
             <marker date="1470925140181" expanded="true" signature="52262:52293" ph="INSERT INTO " />
@@ -1134,20 +1137,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TransUnitRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
+        <state relative-caret-position="1285">
           <caret line="245" column="65" selection-start-line="245" selection-start-column="62" selection-end-line="245" selection-end-column="65" />
           <folding>
             <element signature="e#40#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
-          <folding>
-            <element signature="e#128#173#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1162,10 +1155,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="280" column="37" selection-start-line="280" selection-start-column="37" selection-end-line="280" selection-end-column="37" />
+        <state relative-caret-position="695">
+          <caret line="309" column="8" selection-start-line="309" selection-start-column="8" selection-end-line="309" selection-end-column="8" />
           <folding>
             <element signature="e#40#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FileRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="185" column="59" selection-start-line="185" selection-start-column="51" selection-end-line="185" selection-end-column="59" />
+          <folding>
+            <element signature="e#128#173#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

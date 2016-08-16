@@ -167,6 +167,26 @@ class TransUnitService
         $repository = $this->getRepository('TransUnit');
         return $repository->findBy($criteria);
     }
+
+    /**
+     * @param $locales
+     * @param $domains
+     * @return mixed
+     */
+    public function findForLocalesAndDomains($locales, $domains)
+    {
+        $repository = $this->getRepository('File');
+
+        if(empty($locales))
+            $locales = $this->getLocales();
+
+        if(empty($domains))
+            $domains = $this->getDomains();
+
+        file_put_contents("count.txt",$this->count($locales));
+        
+        return $repository->findForLocalesAndDomains($locales,$domains);
+    }
     
     /**
      * Get specify repository for database
