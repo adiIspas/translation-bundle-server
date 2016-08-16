@@ -271,4 +271,26 @@ class TransUnitController extends RestController
 
         return $transUnitService->findBy($criteria);
     }
+
+    /**
+     * @param Request $request
+     * @FOS\View()
+     * @FOS\Post("/get_file")
+     * @return File|mixed
+     */
+    public function postGetFileAction(Request $request)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+        $requestParams = $request->request->all();
+
+        $name = $requestParams['name'];
+        $path = $requestParams['path'];
+
+        $em = $this->getDoctrine()->getManager();
+        $fileManager = new FileManager();
+
+        $file = $fileManager->getFor($name, $path, $em, $transUnitService);
+
+        return $file;
+    }
 }

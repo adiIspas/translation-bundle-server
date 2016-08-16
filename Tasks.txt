@@ -15,3 +15,5 @@ Sa citesc despre verbele de acces si despre codurile de status.
 7) Inlocuire problema la keyName in TransUnit si key in TransUnitModel
 
 8) Verificare dubla
+
+9) PROBLEMA LA ACTUALIZARE si CAUTARE
