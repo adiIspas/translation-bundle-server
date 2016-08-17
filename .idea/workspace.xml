@@ -25,8 +25,8 @@
       <file leaf-file-name="TransUnitController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="309" column="8" selection-start-line="309" selection-start-column="8" selection-end-line="309" selection-end-column="8" />
+            <state relative-caret-position="712">
+              <caret line="345" column="8" selection-start-line="345" selection-start-column="8" selection-end-line="345" selection-end-column="8" />
               <folding>
                 <element signature="e#40#66#0#PHP" expanded="true" />
               </folding>
@@ -34,31 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FileRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransUnit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Model/TransUnit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransUnitService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TransUnitService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="185" column="59" selection-start-line="185" selection-start-column="51" selection-end-line="185" selection-end-column="59" />
+            <state relative-caret-position="639">
+              <caret line="195" column="43" selection-start-line="195" selection-start-column="43" selection-end-line="195" selection-end-column="43" />
               <folding>
                 <element signature="e#128#173#0#PHP" expanded="true" />
               </folding>
@@ -66,25 +46,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransUnitRepository.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TransUnitRepository.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TransUnitRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1285">
-              <caret line="245" column="65" selection-start-line="245" selection-start-column="62" selection-end-line="245" selection-end-column="65" />
+            <state relative-caret-position="478">
+              <caret line="224" column="42" selection-start-line="224" selection-start-column="42" selection-end-line="224" selection-end-column="42" />
               <folding>
                 <element signature="e#40#88#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicEntityPersister.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="883" column="66" selection-start-line="883" selection-start-column="66" selection-end-line="883" selection-end-column="66" />
-              <folding>
-                <marker date="1470925140181" expanded="true" signature="52262:52293" ph="INSERT INTO " />
               </folding>
             </state>
           </provider>
@@ -133,17 +101,17 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Manager/TransUnitManager.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/services.xml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/TranslationRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/TransUnitRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Model/File.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Translation.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Manager/FileManagerInterface.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Manager/FileManager.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/TransUnit.php" />
-        <option value="$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Model/TransUnit.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/FileRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php" />
+        <option value="$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/TransUnitRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php" />
       </list>
     </option>
   </component>
@@ -779,15 +747,15 @@
       <option name="presentableId" value="Default" />
       <updated>1470227446711</updated>
       <workItem from="1470227448151" duration="24970000" />
-      <workItem from="1471331338166" duration="6722000" />
+      <workItem from="1471331338166" duration="20798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113170000" />
+    <option name="totallyTimeSpent" value="127246000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14498934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -795,18 +763,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -853,14 +821,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Response.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Manager/FileInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -963,6 +923,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="33" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1120,27 +1081,7 @@
         <state relative-caret-position="435">
           <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
           <folding>
-            <element signature="e#36#99#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="883" column="66" selection-start-line="883" selection-start-column="66" selection-end-line="883" selection-end-column="66" />
-          <folding>
-            <marker date="1470925140181" expanded="true" signature="52262:52293" ph="INSERT INTO " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TransUnitRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1285">
-          <caret line="245" column="65" selection-start-line="245" selection-start-column="62" selection-end-line="245" selection-end-column="65" />
-          <folding>
-            <element signature="e#40#88#0#PHP" expanded="true" />
+            <element signature="e#36#99#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1153,30 +1094,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/ParameterBag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FileRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="878" column="5" selection-start-line="878" selection-start-column="5" selection-end-line="878" selection-end-column="5" />
+          <folding>
+            <marker date="1471427178715" expanded="true" signature="52192:52223" ph="INSERT INTO " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TransUnitController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="309" column="8" selection-start-line="309" selection-start-column="8" selection-end-line="309" selection-end-column="8" />
+        <state relative-caret-position="712">
+          <caret line="345" column="8" selection-start-line="345" selection-start-column="8" selection-end-line="345" selection-end-column="8" />
           <folding>
             <element signature="e#40#66#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FileRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="639">
+          <caret line="195" column="43" selection-start-line="195" selection-start-column="43" selection-end-line="195" selection-end-column="43" />
+          <folding>
+            <element signature="e#128#173#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/TransUnitService.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TransUnitRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="185" column="59" selection-start-line="185" selection-start-column="51" selection-end-line="185" selection-end-column="59" />
+        <state relative-caret-position="478">
+          <caret line="224" column="42" selection-start-line="224" selection-start-column="42" selection-end-line="224" selection-end-column="42" />
           <folding>
-            <element signature="e#128#173#0#PHP" expanded="true" />
+            <element signature="e#40#88#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

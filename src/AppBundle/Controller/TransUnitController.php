@@ -303,11 +303,47 @@ class TransUnitController extends RestController
     public function postFindForLocalesAndDomainsAction(Request $request)
     {
         $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+
         $requestParams = $request->request->all();
-        
         $locales = $requestParams['locales'];
         $domains = $requestParams['domains'];
+
+        $files = $transUnitService->findForLocalesAndDomains($locales, $domains);
+        return $files;
+    }
+
+    /**
+     * @param Request $request
+     * @FOS\View()
+     * @FOS\Post("/get_translations_for_file")
+     * @return mixed
+     */
+    public function postGetTranslationsForFileAction(Request $request)
+    {
+        $transUnitService = $this->container->get('app_bundle.service.trans_unit');
+
+        $requestParams = $request->request->all();
+        $id = $requestParams['id'];
+        $locale = $requestParams['locale'];
+        $domain = $requestParams['domain'];
+        $extention = $requestParams['extention'];
+        $path = $requestParams['path'];
+        $hash = $requestParams['hash'];
+        $onlyUpdated = ($requestParams['onlyUpdated'] == 'true' ? true : false );
+
+        $file = new File();
+        $file->setId($id);
+        $file->setLocale($locale);
+        $file->setDomain($domain);
+        $file->setExtention($extention);
+        $file->setPath($path);
+        $file->setHash($hash);
+
+        file_put_contents("fisier.txt", print_r($file,true));
+
+        $translations = $transUnitService->getTranslationsForFile($file, $onlyUpdated);
+
         
-        return $transUnitService->findForLocalesAndDomains($locales, $domains);
+        return $translations;
     }
 }

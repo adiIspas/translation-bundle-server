@@ -1,0 +1,157 @@
+Array
+(
+    [0] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 202
+            [domain:protected] => messages
+            [locale:protected] => bg
+            [extention:protected] => xliff
+            [path:protected] => Resources/translations
+            [hash:protected] => 29b951466ba07bba212334419c0ba17a
+            [translations:protected] => 
+        )
+
+    [1] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 203
+            [domain:protected] => messages
+            [locale:protected] => en
+            [extention:protected] => xliff
+            [path:protected] => Resources/translations
+            [hash:protected] => 1b42f15a58273b39f119d46f51b50047
+            [translations:protected] => 
+        )
+
+    [2] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 204
+            [domain:protected] => messages
+            [locale:protected] => hu
+            [extention:protected] => xliff
+            [path:protected] => Resources/translations
+            [hash:protected] => 521d726afa998f10f2befdd3ce0d51ac
+            [translations:protected] => 
+        )
+
+    [3] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 205
+            [domain:protected] => messages
+            [locale:protected] => pl
+            [extention:protected] => xliff
+            [path:protected] => Resources/translations
+            [hash:protected] => 49f32582701befca76a94116ee6ffb06
+            [translations:protected] => 
+        )
+
+    [4] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 206
+            [domain:protected] => messages
+            [locale:protected] => ro
+            [extention:protected] => xliff
+            [path:protected] => Resources/translations
+            [hash:protected] => 91d643b12dec1b15bbf6ceb5936915df
+            [translations:protected] => 
+        )
+
+    [5] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 207
+            [domain:protected] => messages
+            [locale:protected] => ro
+            [extention:protected] => yml
+            [path:protected] => Resources/translations
+            [hash:protected] => 84cdfd8b4d5b087f1c3a49e06f4b96db
+            [translations:protected] => 
+        )
+
+    [6] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 208
+            [domain:protected] => messages
+            [locale:protected] => en
+            [extention:protected] => yml
+            [path:protected] => Resources/translations
+            [hash:protected] => fc74f6a74137e00463e84910ddb3e44e
+            [translations:protected] => 
+        )
+
+    [7] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 209
+            [domain:protected] => messages
+            [locale:protected] => bg
+            [extention:protected] => yml
+            [path:protected] => Resources/translations
+            [hash:protected] => f9cba13d4c579a2c17bd36c11dc7f6fc
+            [translations:protected] => 
+        )
+
+    [8] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 210
+            [domain:protected] => messages
+            [locale:protected] => hu
+            [extention:protected] => yml
+            [path:protected] => Resources/translations
+            [hash:protected] => 80711d7f26a82267f1c162dc810d525b
+            [translations:protected] => 
+        )
+
+    [9] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 211
+            [domain:protected] => messages
+            [locale:protected] => pl
+            [extention:protected] => yml
+            [path:protected] => Resources/translations
+            [hash:protected] => b41a1194e3ed1602b888eaa9797b3f27
+            [translations:protected] => 
+        )
+
+    [10] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 212
+            [domain:protected] => validators
+            [locale:protected] => ro
+            [extention:protected] => yml
+            [path:protected] => Resources/translations
+            [hash:protected] => 132ea8eb403dc85b62667ac06e75e97f
+            [translations:protected] => 
+        )
+
+    [11] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 213
+            [domain:protected] => validators
+            [locale:protected] => en
+            [extention:protected] => yml
+            [path:protected] => Resources/translations
+            [hash:protected] => e2d4ac91c2f28e7339b317adc186d1e7
+            [translations:protected] => 
+        )
+
+    [12] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 214
+            [domain:protected] => validators
+            [locale:protected] => bg
+            [extention:protected] => yml
+            [path:protected] => Resources/translations
+            [hash:protected] => c92fd322ef5c62f6c1712a6df524269d
+            [translations:protected] => 
+        )
+
+    [13] => AppBundle\Entity\File Object
+        (
+            [id:protected] => 215
+            [domain:protected] => validators
+            [locale:protected] => hu
+            [extention:protected] => yml
+            [path:protected] => Resources/translations
+            [hash:protected] => d5865de7c6466aabc8b860ebe46e0a1f
+            [translations:protected] => 
+        )
+
+)

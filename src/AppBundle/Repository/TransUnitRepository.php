@@ -205,10 +205,10 @@ class TransUnitRepository extends EntityRepository
      * @param boolean $onlyUpdated
      * @return array
      */
-    public function getTranslationsForFile(ModelFile $file, $onlyUpdated)
+    public function getTranslationsForFile($file, $onlyUpdated)
     {
         $builder = $this->createQueryBuilder('tu')
-            ->select('tu.key, te.content')
+            ->select('tu.keyName, te.content')
             ->leftJoin('tu.translations', 'te')
             ->where('te.file = :file')
             ->setParameter('file', $file->getId())
@@ -222,7 +222,7 @@ class TransUnitRepository extends EntityRepository
 
         $translations = array();
         foreach ($results as $result) {
-            $translations[$result['key']] = $result['content'];
+            $translations[$result['keyName']] = $result['content'];
         }
 
         return $translations;

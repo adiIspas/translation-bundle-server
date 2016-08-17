@@ -30,7 +30,8 @@ class FileRepository extends EntityRepository
             $builder->andWhere($builder->expr()->in('f.domain', $domains));
         }
 
-        return $builder->getQuery()->getResult();
+        $files = $builder->getQuery()->getResult();
+        return $files;
     }
 
     /**

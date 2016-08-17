@@ -169,6 +169,7 @@ class TransUnitService
     }
 
     /**
+     * Find files from locales and domains
      * @param $locales
      * @param $domains
      * @return mixed
@@ -182,10 +183,20 @@ class TransUnitService
 
         if(empty($domains))
             $domains = $this->getDomains();
-
-        file_put_contents("count.txt",$this->count($locales));
         
         return $repository->findForLocalesAndDomains($locales,$domains);
+    }
+
+    /**
+     * Get translations for file
+     * @param ModelFile $file
+     * @param $onlyUpdated
+     * @return mixed
+     */
+    public function getTranslationsForFile($file, $onlyUpdated)
+    {
+        $repository = $this->getRepository('TransUnit');
+        return $repository->getTranslationsForFile($file,$onlyUpdated);
     }
     
     /**
