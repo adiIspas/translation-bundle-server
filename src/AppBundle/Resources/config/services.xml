@@ -6,6 +6,15 @@
     <parameters>
         <parameter key="app_bundle.service.trans_unit.class">AppBundle\Service\TransUnitService</parameter>
         <parameter key="app_bundle.handler.data_grid_request.class">AppBundle\Util\DataGrid\DataGridRequestHandler</parameter>
+        <parameter key="app_bundle.importer.file.class">AppBundle\Translation\Importer\FileImporter</parameter>
+        <parameter key="app_bundle.translation_storage.class">AppBundle\Storage\DoctrineORMStorage</parameter>
+        <parameter key="app_bundle.loader.database.class">AppBundle\Translation\Loader\DatabaseLoader</parameter>
+        <parameter key="app_bundle.trans_unit.manager.class">AppBundle\Manager\TransUnitManager</parameter>
+        <parameter key="app_bundle.file.manager.class">AppBundle\Manager\FileManager</parameter>
+        <parameter key="app_bundle.entity.file.class">AppBundle\Entity\File</parameter>
+        <parameter key="app_bundle.entity.translation.class">AppBundle\Entity\Translation</parameter>
+        <parameter key="app_bundle.entity.trans_unit.class">AppBundle\Entity\TransUnit</parameter>
+        <parameter key="app_bundle.importer.case_insensitive">false</parameter>
     </parameters>
 
     <services>
@@ -14,6 +23,43 @@
         </service>
         <service id="app_bundle.handler.data_grid_request" class="%app_bundle.handler.data_grid_request.class%">
             <argument type="service" id="doctrine"/>
+        </service>
+
+        <!--<service id="app_bundle.entity.trans_unit" class="%app_bundle.entity.trans_unit.class%">-->
+        <!--</service>-->
+        <service id="app_bundle.entity.translation" class="%app_bundle.entity.translation.class%">
+        </service>
+        <service id="app_bundle.entity.file" class="%app_bundle.entity.file.class%">
+        </service>
+
+        <service id="app_bundle.translation_storage" class="%app_bundle.translation_storage.class%">
+            <argument type="service" id="doctrine"/>
+            <argument type="string">default</argument>
+            <argument type="collection" id="app_bundle.entity.trans_unit"/>
+            <argument type="service" id="app_bundle.entity.translation"/>
+            <argument type="service" id="app_bundle.entity.file"/>
+        </service>
+        <service id="app_bundle.trans_unit.manager" class="%app_bundle.trans_unit.manager.class%">
+            <argument type="service" id="app_bundle.translation_storage" />
+            <argument type="service" id="app_bundle.file.manager" />
+            <argument>%kernel.root_dir%</argument>
+        </service>
+        <service id="app_bundle.file.manager" class="%app_bundle.file.manager.class%">
+            <argument type="service" id="app_bundle.translation_storage" />
+            <argument>%kernel.root_dir%</argument>
+        </service>
+
+        <service id="app_bundle.importer.file" class="%app_bundle.importer.file.class%">
+            <argument type="collection"><!-- translation loaders -->
+                <!--<argument key="environment">%kernel.environment%</argument>-->
+                <!--<argument key="debug">%kernel.debug%</argument>-->
+            </argument>
+            <argument type="service" id="app_bundle.translation_storage" />
+            <argument type="service" id="app_bundle.trans_unit.manager" />
+            <argument type="service" id="app_bundle.file.manager" />
+            <call method="setCaseInsensitiveInsert">
+                <argument>%app_bundle.importer.case_insensitive%</argument>
+            </call>
         </service>
     </services>
 </container>

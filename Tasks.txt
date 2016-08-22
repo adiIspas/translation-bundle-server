@@ -1,19 +1,1 @@
-1) Sa mut toate entitatile de care am nevoie in aplicatia server.
-2) Sa creez un controler TransUnitController in care voi avea 
-   metodele de post/get pentru obtinerea de informatii la un nivel 
-   de suprafata.
-3) Sa creez un serviciu TransUnitService in care sa am implementarile
-   complete ale functiilor ce le apelez din controler.
-4) Sa creez un exemplu de test in care fac un query in baza de date.
-
-Sa citesc despre verbele de acces si despre codurile de status.
-
-5) // TO DO - Trebuie sa apelezi o functie de API
-
-6) Sa iau id si traducerile si sa le trimit in metoda de API
-
-7) Inlocuire problema la keyName in TransUnit si key in TransUnitModel
-
-8) Verificare dubla
-
 9) PROBLEMA LA ACTUALIZARE si CAUTARE

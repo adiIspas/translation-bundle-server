@@ -2,7 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/var/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/cache" />
       <excludeFolder url="file://$MODULE_DIR$/var/logs" />
     </content>
     <orderEntry type="inheritedJdk" />

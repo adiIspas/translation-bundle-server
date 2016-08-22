@@ -46,10 +46,10 @@ class FileManager implements FileManagerInterface
         $file = $transUnitService->getFileByHash($hash);
 
         if (!($file instanceof FileInterface)) {
-            file_put_contents("add.txt",print_r($file,true));
             $file = $this->create($name, $path, $em);
         }
 
+        file_put_contents("add.txt",print_r($file,true));
         return $file;
     }
 

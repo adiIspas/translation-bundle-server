@@ -1,8 +1,8 @@
 AppBundle\Entity\File Object
 (
-    [id:protected] => 215
-    [domain:protected] => validators
-    [locale:protected] => hu
+    [id:protected] => 206
+    [domain:protected] => messages
+    [locale:protected] => ro
     [extention:protected] => yml
     [path:protected] => Resources/translations
     [hash:protected] => d5865de7c6466aabc8b860ebe46e0a1f

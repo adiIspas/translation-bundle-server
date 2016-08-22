@@ -7,8 +7,10 @@ use AppBundle\Entity\Translation;
 use AppBundle\Entity\TransUnit;
 use AppBundle\Manager\FileInterface;
 use AppBundle\Manager\FileManager;
+use AppBundle\Translation\Importer\FileImporter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Request\ParamFetcherInterface;
@@ -338,12 +340,35 @@ class TransUnitController extends RestController
         $file->setExtention($extention);
         $file->setPath($path);
         $file->setHash($hash);
-
-        file_put_contents("fisier.txt", print_r($file,true));
-
+        
         $translations = $transUnitService->getTranslationsForFile($file, $onlyUpdated);
 
-        
+
         return $translations;
+    }
+
+
+    /**
+     * @param Request $request
+     * @FOS\View()
+     * @FOS\Post("/import_translations")
+     * @return string
+     */
+    public function postImportTranslationsAction(Request $request)
+    {
+        /** @var FileImporter $fileImporter */
+        $fileImporter = $this->container->get('app_bundle.importer.file');
+        $requestParams = $request->request->all();
+
+        $relativePath = $requestParams['relativePath'];
+        $relativePathname = $requestParams['relativePathname'];
+        $pathName = $requestParams['pathName'];
+        $fileName = $requestParams['fileName'];
+
+        $fileInfo = new SplFileInfo($fileName,$relativePath,$relativePathname);
+
+        return $fileImporter->import($fileInfo, false, false);
+
+        //return 1;
     }
 }

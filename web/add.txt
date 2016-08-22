@@ -1,0 +1,10 @@
+AppBundle\Entity\File Object
+(
+    [id:protected] => 202
+    [domain:protected] => messages
+    [locale:protected] => bg
+    [extention:protected] => xliff
+    [path:protected] => Resources/translations
+    [hash:protected] => 29b951466ba07bba212334419c0ba17a
+    [translations:protected] => 
+)
